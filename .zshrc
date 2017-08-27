@@ -1,18 +1,16 @@
-# Kubectl autocomplete
-alias ka="source <($HOME/.bin/kubectl completion zsh)"
+autoload -U colors; colors
+source $HOME/Library/Caches/Homebrew/zsh-kubectl-prompt--git/kubectl.zsh
+RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#Kubectl alias
-alias k="kubectl"
-alias kc="k config current-context"
-
-#Teresa alias
-alias t="teresa"
-alias tc="t config view | grep current_cluster"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/.bin
+
+#Golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/yago/.oh-my-zsh
@@ -65,7 +63,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git kubectl aws common-aliases docker history osx sublime web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,5 +97,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias vi="nvim"
+
+#Kubectl alias
+alias k="kubectl"
+alias kc="k config current-context"
+
+#Teresa alias
+alias t="teresa"
+alias tc="t config view | grep current_cluster"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
