@@ -1,3 +1,10 @@
+" Auto install vim-plug and plugins
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd vimenter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
 
@@ -32,6 +39,10 @@ Plug 'chase/vim-ansible-yaml'
 
 call plug#end()
 
+"set t_Co=256
+"set t_AB=^[[48;5;%dm
+"set t_AF=^[[38;5;%dm
+
 "----------------------------------------------
 " General settings
 "----------------------------------------------
@@ -41,7 +52,7 @@ set autoread                      " reload file if the file changes on the disk
 set autowrite                     " write when switching buffers
 set autowriteall                  " write on :quit
 set clipboard=unnamedplus
-"set colorcolumn=81                " highlight the 80th column as an indicator
+set colorcolumn=81                " highlight the 80th column as an indicator
 set completeopt-=preview          " remove the horrendous preview window
 set cursorline                    " highlight the current line for the cursor
 set encoding=utf-8
