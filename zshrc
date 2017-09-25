@@ -106,4 +106,8 @@ alias kc="k config current-context"
 alias t="teresa"
 alias tc="t config view | grep current_cluster"
 
+#Git Aliases
+alias gs="git status"
+alias gpf="git push -f"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
