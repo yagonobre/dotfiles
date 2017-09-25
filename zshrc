@@ -112,3 +112,6 @@ alias gpf="git push -f"
 alias gpo="git push --set-upstream origin $(git branch | awk '/^\* / { print $2 }')"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Start tmux
+[[ $TERM =~ '^screen' ]] || tmux attach
