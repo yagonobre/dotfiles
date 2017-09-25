@@ -36,6 +36,7 @@ Plug 'vim-scripts/nginx.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'chase/vim-ansible-yaml'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
