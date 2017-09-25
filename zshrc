@@ -109,5 +109,6 @@ alias tc="t config view | grep current_cluster"
 #Git Aliases
 alias gs="git status"
 alias gpf="git push -f"
+alias gpo="git push --set-upstream origin $(git branch | awk '/^\* / { print $2 }')"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
