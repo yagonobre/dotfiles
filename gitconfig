@@ -1,3 +1,14 @@
 [user]
-	email = nobre.yago@gmail.com
 	name = Yago Nobre
+	email = nobre.yago@gmail.com
+	signingkey = nobre.yago@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+[rebase]
+	autoStash = true
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[alias]
+	plog = log --graph --pretty=format:'%h -%d %s %n' --abbrev-commit --date=relative --branches
